@@ -1,5 +1,4 @@
 from colorama import Fore,Style,init
-import sys
 import time
 def type_text(text,color=Fore.WHITE,delay=0.03):
     print(color,end="")
@@ -20,4 +19,4 @@ def user(text):
 def info(text):
     type_text(f"Friday:{text}",Fore.YELLOW)
 def error(text):
-    type_text(text,Fore.RED)
+    type_text(str(text),Fore.RED)
