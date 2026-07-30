@@ -3,6 +3,7 @@ from command import process_command
 from ai import ask_ai
 from greeting import wish
 from colorama import Fore,Style,init
+import threading
 from ui import friday,user,error,info
 import keyboard
 init(autoreset=True)
@@ -43,10 +44,17 @@ while True:
 
         else:
             try:
-
                 response=ask_ai(command)
+
+                voice_thread = threading.Thread(
+                    target=speak,
+                    args=(response,)
+                )
+                voice_thread.start()
                 info(response)
-                speak(response)
+                voice_thread.join()
+
+
             except Exception as e:
                 error(str(e))
                 error("Sorry i couldn't get response from the AI")
