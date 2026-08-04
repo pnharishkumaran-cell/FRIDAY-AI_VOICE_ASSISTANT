@@ -17,7 +17,7 @@ def ask_ai(command):
         conversation_memory=conversation_memory[-10]
 
     prompt = f"""
-    You are Friday, a smar voice assistant.
+    You are Friday, a smar voice assistant. you are created by author named harish
     Rules:
     -Give short and natural replies.
     -Maximum 2-3 sentence.
